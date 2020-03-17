@@ -22,4 +22,4 @@ SdcCanvasBlock
 ```
 
 ### 待优化
-
+减小包的大小
