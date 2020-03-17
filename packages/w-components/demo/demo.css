@@ -1,0 +1,11 @@
+.editor-container {
+    width: 100%;
+    height: 40rem;
+    background-color: #fff;
+    background-image: linear-gradient(transparent 1px, transparent 0),
+        linear-gradient(90deg, transparent 1px, transparent 0),
+        linear-gradient(#ddd 1px, transparent 0),
+        linear-gradient(90deg, #ddd 1px, transparent 0);
+    background-size: 75px 75px, 75px 75px, 10px 10px, 10px 10px;
+    overflow: hidden;
+}

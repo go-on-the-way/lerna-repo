@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title></title>
+</head>
+
+<body>
+    <noscript>
+        <strong>We're sorry but doesn't work properly without JavaScript enabled.
+            Please enable it to continue.</strong>
+    </noscript>
+    <div id="app">
+        <div class="editor-container">
+            <sdc-canvas :id="canvasId" :scale="scale" :connectors="connectors" v-slot="slotProps">
+                <sdc-canvas-block v-for="ele in blocks" :key="ele.id" :part="ele" :canvas="slotProps.canvas">12313
+                </sdc-canvas-block>
+            </sdc-canvas>
+        </div>
+    </div>
+    <!-- built files will be auto injected -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script src="../w-ui.js"></script>
+<script type="text/javascript" src="../demo/demo.js"></script></body>
+
+</html>
