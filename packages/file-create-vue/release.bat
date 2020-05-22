@@ -1,8 +1,8 @@
 :: 关闭回显
-@echo OFF
-ECHO "============================= RELEASE START..."
+:: @echo OFF
+:: ECHO "============================= RELEASE START..."
 
-SET version=1.0.0
+:: SET version=1.0.0
 
 :: commit
 :: git add -A
