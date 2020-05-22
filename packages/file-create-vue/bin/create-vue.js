@@ -21,7 +21,7 @@ function help () {
 help()
 
 let fileName = program.args[0]
-const templatesPath = 'templates'
+const templatesPath = './templates'
 const content = fs.readFileSync(`${templatesPath}/vue-template.vue`).toString()
 const result = handlebars.compile(content)({name:fileName})
 
