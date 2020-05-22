@@ -1,2 +1,10 @@
-# file-create-vue
-vue create 创建单文件组件
+### 创建VUE单文件
+
+#### 安装
+`npm install vue-file-create -D`
+
+#### 使用
+`file-create vue MyVueComponent`
+
+#### 备注
+目前只支持在当前目录创建文件
