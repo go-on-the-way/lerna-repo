@@ -4,6 +4,7 @@ const program = require('commander')
 const chalk = require('chalk')
 const handlebars = require('handlebars')
 const fs = require('fs')
+let path = require('path')
 
 program.usage('<file-name>')
 
@@ -21,8 +22,7 @@ function help () {
 help()
 
 let fileName = program.args[0]
-const templatesPath = './templates'
-const content = fs.readFileSync(`${templatesPath}/vue-template.vue`).toString()
+const content = fs.readFileSync(path.resolve(__dirname,'../templates/vue-template.vue')).toString()
 const result = handlebars.compile(content)({name:fileName})
 
 fs.writeFileSync(process.cwd()+`/${fileName}.vue`, result)
