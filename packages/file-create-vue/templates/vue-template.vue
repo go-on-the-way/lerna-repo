@@ -1,29 +1,31 @@
 <template>
-  
+    <div>
+
+    </div>
 </template>
 
 <script>
-  export default {
+export default {
     name: '{{name}}',
     props: {
     },
     data() {
-      return {
-        
-      }
-    },
-    mounted() {
-     
-    },
-    beforeDestroy() {
-      
+        return {
+
+        }
     },
     methods: {
-      
+
+    },
+    mounted() {
+
+    },
+    beforeDestroy() {
+
     }
-  }
+}
 </script>
 
 <style lang="scss" scoped>
-  
+
 </style>
