@@ -1,9 +1,9 @@
 {
   "name": "starlinke-lib",
-  "version": "0.0.2",
-  "description": "A library packaging tool based on rollup and vue-cli3",
+  "version": "0.0.0",
+  "description": "A library packaging tool based on rollup",
   "private": false,
-  "author": "",
+  "author": "wlei",
   "main": "lib/index.js",
   "license": "MIT",
   "keywords": [
@@ -18,11 +18,11 @@
   "style": "lib/theme/index.css",
   "repository": {
     "type": "git",
-    "url": "x"
+    "url": "https://github.com/go-on-the-way/Starlinke-Lib"
   },
   "homepage": "",
   "bugs": {
-    "url": ""
+    "url": "https://github.com/go-on-the-way/Starlinke-Lib/issues"
   },
   "scripts": {
     "serve": "cross-env NODE_ENV=development && vue-cli-service serve --copy",
