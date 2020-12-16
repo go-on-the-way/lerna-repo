@@ -1,6 +1,7 @@
 import SingleSelect from '../packages/single-select/index'
+import SlUploadImages from '../packages/upload-images/index'
 import { version } from '../package.json'
-const components = [SingleSelect]
+const components = [SingleSelect, SlUploadImages]
 
 const install = function(Vue) {
   // 判断是否安装
@@ -19,5 +20,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
   version,
   install,
-  SingleSelect
+  SingleSelect,
+  SlUploadImages
 }
