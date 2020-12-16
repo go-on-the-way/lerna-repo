@@ -25,7 +25,6 @@
   //
   var script = {
     name: 'SlSingleSelect',
-    components: {},
     model: {
       prop: 'modelVal',
       event: 'valChange'
@@ -68,7 +67,6 @@
         immediate: true
       }
     },
-    mounted: function mounted() {},
     methods: {
       selectChange: function selectChange() {
         this.$emit('valChange', this.value);
@@ -252,7 +250,7 @@
     /* style */
     var __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-8b0dd872_0", { source: "\n\n/*# sourceMappingURL=main.vue.map */", map: {"version":3,"sources":["main.vue"],"names":[],"mappings":";;AAEA,mCAAmC","file":"main.vue"}, media: undefined });
+      inject("data-v-6902c4f2_0", { source: "\n\n/*# sourceMappingURL=main.vue.map */", map: {"version":3,"sources":["main.vue"],"names":[],"mappings":";;AAEA,mCAAmC","file":"main.vue"}, media: undefined });
 
     };
     /* scoped */
