@@ -282,9 +282,133 @@
     Vue.component(__vue_component__.name, __vue_component__);
   };
 
-  var version = "0.0.1";
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  //
+  var script$1 = {
+    name: 'SlUploadImages',
+    props: {},
+    data: function data() {
+      return {
+        dialogImageUrl: '',
+        dialogVisible: false
+      };
+    },
+    computed: {},
+    watch: {},
+    mounted: function mounted() {},
+    methods: {
+      handleRemove: function handleRemove(file, fileList) {
+        console.log(file, fileList);
+      },
+      handlePictureCardPreview: function handlePictureCardPreview(file) {
+        this.dialogImageUrl = file.url;
+        this.dialogVisible = true;
+      }
+    }
+  };
 
-  var components = [__vue_component__];
+  /* script */
+  var __vue_script__$1 = script$1;
+
+  /* template */
+  var __vue_render__$1 = function() {
+    var _vm = this;
+    var _h = _vm.$createElement;
+    var _c = _vm._self._c || _h;
+    return _c(
+      "div",
+      [
+        _c(
+          "el-upload",
+          {
+            attrs: {
+              action: "https://jsonplaceholder.typicode.com/posts/",
+              "list-type": "picture-card",
+              "on-preview": _vm.handlePictureCardPreview,
+              "on-remove": _vm.handleRemove
+            }
+          },
+          [_c("i", { staticClass: "el-icon-plus" })]
+        ),
+        _vm._v(" "),
+        _c(
+          "el-dialog",
+          {
+            attrs: { visible: _vm.dialogVisible },
+            on: {
+              "update:visible": function($event) {
+                _vm.dialogVisible = $event;
+              }
+            }
+          },
+          [
+            _c("img", {
+              attrs: { width: "100%", src: _vm.dialogImageUrl, alt: "" }
+            })
+          ]
+        )
+      ],
+      1
+    )
+  };
+  var __vue_staticRenderFns__$1 = [];
+  __vue_render__$1._withStripped = true;
+
+    /* style */
+    var __vue_inject_styles__$1 = function (inject) {
+      if (!inject) return
+      inject("data-v-50c12ce4_0", { source: "\n\n/*# sourceMappingURL=main.vue.map */", map: {"version":3,"sources":["main.vue"],"names":[],"mappings":";;AAEA,mCAAmC","file":"main.vue"}, media: undefined });
+
+    };
+    /* scoped */
+    var __vue_scope_id__$1 = "data-v-50c12ce4";
+    /* module identifier */
+    var __vue_module_identifier__$1 = undefined;
+    /* functional template */
+    var __vue_is_functional_template__$1 = false;
+    /* style inject SSR */
+    
+    /* style inject shadow dom */
+    
+
+    
+    var __vue_component__$1 = /*#__PURE__*/normalizeComponent(
+      { render: __vue_render__$1, staticRenderFns: __vue_staticRenderFns__$1 },
+      __vue_inject_styles__$1,
+      __vue_script__$1,
+      __vue_scope_id__$1,
+      __vue_is_functional_template__$1,
+      __vue_module_identifier__$1,
+      false,
+      createInjector,
+      undefined,
+      undefined
+    );
+
+  __vue_component__$1.install = function (Vue) {
+    Vue.component(__vue_component__$1.name, __vue_component__$1);
+  };
+
+  var version = "0.0.2";
+
+  var components = [__vue_component__, __vue_component__$1];
 
   var install = function install(Vue) {
     // 判断是否安装
@@ -304,7 +428,8 @@
   var index = {
     version: version,
     install: install,
-    SingleSelect: __vue_component__
+    SingleSelect: __vue_component__,
+    SlUploadImages: __vue_component__$1
   };
 
   return index;
