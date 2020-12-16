@@ -1,46 +1,17 @@
 # starlinke-lib
 
-## 安装依赖
+## 安装
 ```
-npm install
-```
-
-### 运行example
-```
-npm run serve
+npm install starlinke-lib --save
 ```
 
+## 使用
+```
+import Vue from 'vue'
+import ElementUI from 'element-ui'
+import StarlinkeLib from 'starlinke-lib' //依赖vue和element-ui
 
-### 运行测试用例
-```
-npm run test:unit
-```
+Vue.use(ElementUI, { size: 'small' })
+Vue.use(StarlinkeLib)
 
-### 打包库
-```
-npm run  lib
-```
-
-### 格式化全部js文件
-```
-npm run  lint:prettier
-```
-
-### 格式化全部css文件
-```
-npm run  lint:css
-```
-### 运行项目文档
-```
-npm run  docs:dev
-```
-
-### 打包项目文档
-```
-npm run  docs:build
-```
-
-### 生成修改日志
-```
-npm run  version
 ```
