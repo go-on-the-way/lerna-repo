@@ -8,8 +8,6 @@
 
   <highlight-code slot="code" lang="vue">
 
-<<< @/examples/components/helloWorld.vue
-
   </highlight-code>
 </DemoBlock>
 

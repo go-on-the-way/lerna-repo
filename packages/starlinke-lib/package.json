@@ -34,7 +34,7 @@
     "docs:build": "vuepress build docs",
     "precommit": "lint-staged",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s",
-    "pub:rollup": "npm run uv && npm run lib && npm publish",
+    "pub:rollup": "npm run uv && npm publish",
     "uv": "cross-env node ./script/update.version.js"
   },
   "dependencies": {},
