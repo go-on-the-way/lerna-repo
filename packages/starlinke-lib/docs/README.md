@@ -10,5 +10,5 @@ features:
   details: 采用rollup打包,提供commonjs,umd,es依赖包,体积小,速度快。
 - title: 轻松上手
   details: 兼容官方api,易上手,易扩展。
-footer: MIT Licensed | Copyright © 2019 present whenbin.chen
+footer: MIT Licensed | Copyright © 2020 present wlei
 ---
