@@ -527,29 +527,4 @@ __vue_component__.install = function (Vue) {
   Vue.component(__vue_component__.name, __vue_component__);
 };
 
-var version = "0.0.3";
-
-var components = [__vue_component__];
-
-var install = function install(Vue) {
-  // 判断是否安装
-  if (install.installed) {
-    return;
-  }
-
-  components.forEach(function (component) {
-    Vue.component(component.name, component);
-  });
-};
-
-if (typeof window !== 'undefined' && window.Vue) {
-  install(window.Vue);
-}
-
-var index = {
-  version: version,
-  install: install,
-  SlPoper: __vue_component__
-};
-
-module.exports = index;
+module.exports = __vue_component__;
