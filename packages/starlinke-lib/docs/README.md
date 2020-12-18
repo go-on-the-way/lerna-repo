@@ -1,8 +1,8 @@
 ---
 home: true
-heroImage: /home.webp
+heroImage: /logo.png
 actionText: 快速上手 →
-actionLink: /guide/introduction
+actionLink: /guide/
 features:
 - title: 快读构建
   details: 提供现成的脚手架,快速搭建私有库。

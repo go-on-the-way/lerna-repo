@@ -1,6 +1,6 @@
 <template>
   <div class="demo">
-    <sl-upload-images />
+    123
   </div>
 </template>
 
