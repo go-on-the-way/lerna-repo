@@ -9,19 +9,6 @@ module.exports = {
       { text: '组件', link: '/lib/index' },
     ],
     sidebar:{
-      '/guide/':[
-        {
-          title:'简介',
-          collapsable: false,
-          children: [
-            {
-              title:'介绍',
-              path: 'introduction',
-              collapsable: false,
-            }
-          ]
-        },
-      ],
       '/lib/':[
         {
           title:'UI组件',
@@ -36,7 +23,7 @@ module.exports = {
         }
       ]
     },
-    sidebarDepth: 1
+    sidebarDepth: 4
   },
   plugins: [
     // 回到顶部
