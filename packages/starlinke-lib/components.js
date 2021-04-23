@@ -6,5 +6,9 @@ module.exports = {
   poper: {
     input: 'packages/poper/index.js',
     output: 'poper'
+  },
+  SlFieldBatchInput: {
+    input: 'packages/SlFieldBatchInput/index.js',
+    output: 'SlFieldBatchInput'
   }
 }
