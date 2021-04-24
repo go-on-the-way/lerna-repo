@@ -1,0 +1,30 @@
+{
+  "name": "starlinke-api",
+  "version": "1.0.0",
+  "description": "api",
+  "keywords": [
+    "api",
+    "接口层"
+  ],
+  "author": "wanglei <wlei-wang@starlinke.com>",
+  "homepage": "https://github.com/go-on-the-way/lerna-repo#readme",
+  "license": "ISC",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go-on-the-way/lerna-repo.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bugs": {
+    "url": "https://github.com/go-on-the-way/lerna-repo/issues"
+  }
+}

@@ -1,5 +1,6 @@
 const fs = require('fs')
 const pkg = require('../package.json')
+const lockPkg = require('../package-lock.json')
 
 const argvs = process.argv.slice(2)
 const __LARGE__ = argvs.indexOf('l') !== -1
@@ -19,6 +20,8 @@ if (__LARGE__) {
 }
 
 pkg.version = vs.join('.')
+lockPkg.version = pkg.version
 
 fs.writeFileSync('./package.json', JSON.stringify(pkg, null, 2), { encoding: 'utf8' })
+fs.writeFileSync('./package-lock.json', JSON.stringify(lockPkg, null, 2), { encoding: 'utf8' })
 console.log('  version: ' + pkg.version + '\n')

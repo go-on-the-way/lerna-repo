@@ -1,6 +1,6 @@
 {
-  "name": "starlinke-lib",
-  "version": "0.0.7",
+  "name": "starlinke-components",
+  "version": "1.0.0",
   "description": "A library packaging tool based on rollup",
   "private": false,
   "author": "wlei",
@@ -34,6 +34,7 @@
     "docs:build": "vuepress build docs",
     "precommit": "lint-staged",
     "version": "conventional-changelog -p angular -i CHANGELOG.md -s",
+    "publish": "npm publish",
     "pub:rollup": "npm run uv && npm publish",
     "uv": "cross-env node ./script/update.version.js"
   },
