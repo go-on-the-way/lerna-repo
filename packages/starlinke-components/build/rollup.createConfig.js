@@ -55,13 +55,11 @@ async function buildEntry(config) {
   const fullName = output + suffix
   const file = getAssetsPath(fullName)
   const outOptions = {
-    // dir: getAssetsPath(),
     file,
     format,
     name: moduleName,
-    // exports: 'named',
-    globals: externalMap
-    // entryFileNames: file
+    globals: externalMap,
+    // exports: 'named'
   }
   const bundle = await rollup.rollup(inputOptions)
   let { output: outputData } = await bundle.generate(outOptions)
