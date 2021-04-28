@@ -149,5 +149,6 @@
       "eslint --fix",
       "git add"
     ]
-  }
+  },
+  "gitHead": "c290dce9a808ac3b6b93fa3f28c0c8cd8258df26"
 }

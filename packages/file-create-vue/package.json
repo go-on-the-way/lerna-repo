@@ -25,5 +25,6 @@
     "inquirer": "^7.1.0",
     "log-symbols": "^3.0.0",
     "ora": "^4.0.3"
-  }
+  },
+  "gitHead": "c290dce9a808ac3b6b93fa3f28c0c8cd8258df26"
 }
