@@ -1,6 +1,6 @@
 {
   "name": "link-create-vue",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "create vue SFC file",
   "bin": {
     "file-create": "./index.js"
