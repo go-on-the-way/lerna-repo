@@ -1,6 +1,6 @@
 {
   "name": "starlinke-components",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "A library packaging tool based on rollup",
   "private": false,
   "author": "wlei",
@@ -152,6 +152,6 @@
   },
   "gitHead": "c290dce9a808ac3b6b93fa3f28c0c8cd8258df26",
   "dependencies": {
-    "starlinke-utils": "^1.0.6"
+    "starlinke-utils": "^1.0.7"
   }
 }
