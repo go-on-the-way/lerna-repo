@@ -10,6 +10,7 @@ const json = require('rollup-plugin-json')
 const postcss = require('rollup-plugin-postcss')
 const alias = require('rollup-plugin-alias')
 const filesize = require('rollup-plugin-filesize')
+const builtins = require('rollup-plugin-node-builtins')
 const cssnano = require('cssnano')//缩减css代码
 const simplevars = require('postcss-simple-vars')
 const nested = require('postcss-nested')
@@ -70,6 +71,7 @@ async function buildEntry(config) {
 function createPlugins({ min } = {}) {
   const exclude = 'node_modules/**'
   const plugins = [
+    builtins(),// 解决引用第三方包时会有大量提示的问题
     commonjs(),
     json(),
     filesize(),

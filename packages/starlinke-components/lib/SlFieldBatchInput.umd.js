@@ -1,10 +1,14 @@
 /* * Copyright © 2020-2021 wlei * Released under the MIT License. */
 (function (global, factory) {
-  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory() :
-  typeof define === 'function' && define.amd ? define(factory) :
-  (global = global || self, global.SlFieldBatchInput = factory());
-}(this, (function () { 'use strict';
+  typeof exports === 'object' && typeof module !== 'undefined' ? module.exports = factory(require('starlinke-utils')) :
+  typeof define === 'function' && define.amd ? define(['starlinke-utils'], factory) :
+  (global = global || self, global.SlFieldBatchInput = factory(global.starlinkeUtils));
+}(this, (function (starlinkeUtils) { 'use strict';
 
+  //
+  //
+  //
+  //
   //
   //
   //
@@ -350,11 +354,11 @@
     /* style */
     var __vue_inject_styles__ = function (inject) {
       if (!inject) return
-      inject("data-v-44adbeb0_0", { source: "\n\n/*# sourceMappingURL=skuBatchDialog.vue.map */", map: {"version":3,"sources":["skuBatchDialog.vue"],"names":[],"mappings":";;AAEA,6CAA6C","file":"skuBatchDialog.vue"}, media: undefined });
+      inject("data-v-e35d5d0c_0", { source: "\n\n/*# sourceMappingURL=skuBatchDialog.vue.map */", map: {"version":3,"sources":["skuBatchDialog.vue"],"names":[],"mappings":";;AAEA,6CAA6C","file":"skuBatchDialog.vue"}, media: undefined });
 
     };
     /* scoped */
-    var __vue_scope_id__ = "data-v-44adbeb0";
+    var __vue_scope_id__ = "data-v-e35d5d0c";
     /* module identifier */
     var __vue_module_identifier__ = undefined;
     /* functional template */
@@ -420,6 +424,11 @@
       skuCodes: function skuCodes(val) {
         this.skuCodesCopy = val;
       }
+    },
+    mounted: function mounted() {
+      starlinkeUtils.http.get('/srm-common-service/data/name-value/list?dataCode=SUPPLY_TYPE').then(function (res) {
+        console.log(res);
+      });
     },
     methods: {
       handleInput: function handleInput(value) {
@@ -518,11 +527,11 @@
     /* style */
     var __vue_inject_styles__$1 = function (inject) {
       if (!inject) return
-      inject("data-v-324c277e_0", { source: ".sku-container[data-v-324c277e] {\n  display: inline-block;\n}\n\n/*# sourceMappingURL=main.vue.map */", map: {"version":3,"sources":["E:\\code\\font-code\\lerna-repo\\packages\\starlinke-lib\\packages\\SlFieldBatchInput\\src\\main.vue","main.vue"],"names":[],"mappings":"AAyGA;EACA,qBAAA;ACxGA;;AAEA,mCAAmC","file":"main.vue","sourcesContent":["<template>\r\n  <div\r\n    class=\"sku-container\"\r\n    :style=\"{ width: width ? width + 'px' : '100%' }\"\r\n  >\r\n    <el-input\r\n      ref=\"input\"\r\n      v-model=\"skuCodesCopy\"\r\n      :placeholder=\"`请输入${label}`\"\r\n      clearable\r\n      @input=\"handleInput\"\r\n    >\r\n      <el-button\r\n        v-if=\"showBatchButton\"\r\n        slot=\"append\"\r\n        type=\"primary\"\r\n        @click=\"multipleSku\"\r\n      >\r\n        批量\r\n      </el-button>\r\n    </el-input>\r\n    <SkuBatchDialog\r\n      ref=\"skuBatchDialog\"\r\n      :maxLen=\"maxLen\"\r\n      :label=\"label\"\r\n      v-bind=\"$attrs\"\r\n      @submit=\"onSubmit\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport SkuBatchDialog from './skuBatchDialog'\r\n\r\nexport default {\r\n  name: 'SlFieldBatchInput',\r\n  components: {\r\n    SkuBatchDialog\r\n  },\r\n  model: {\r\n    prop: 'skuCodes',\r\n    event: 'confirm'\r\n  },\r\n  props: {\r\n    skuCodes: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    maxLen: {\r\n      type: Number,\r\n      default: 200\r\n    },\r\n    label: {\r\n      type: String,\r\n      default: 'SKU'\r\n    },\r\n    width: {\r\n      type: Number,\r\n      default: 0\r\n    },\r\n    showBatchButton: {\r\n      type: Boolean,\r\n      default: true\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      skuCodesCopy: '',\r\n      multipleSkuVisible: false\r\n    }\r\n  },\r\n  watch: {\r\n    skuCodes(val) {\r\n      this.skuCodesCopy = val\r\n    }\r\n  },\r\n  methods: {\r\n    handleInput(value) {\r\n      this.skuCodesCopy = this.formatLen(this.skuCodesCopy)\r\n      this.onEmit(this.skuCodesCopy)\r\n    },\r\n    multipleSku() {\r\n      if (this.disabled) return\r\n      this.$refs.skuBatchDialog.show(this.skuCodesCopy)\r\n    },\r\n    onSubmit(skucode) {\r\n      this.onEmit(skucode)\r\n    },\r\n    onEmit(skuCodes) {\r\n      this.$emit('confirm', skuCodes)\r\n    },\r\n    formatLen(skuCodes) {\r\n      let skuArr = skuCodes.split(',')\r\n      if (skuArr.length > this.maxLen) {\r\n        this.$message.warning(`超出允许输入最大数量${this.maxLen}个，已自动截取！`)\r\n        skuArr.length = this.maxLen\r\n        return skuArr.join(',')\r\n      }\r\n      return skuCodes\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.sku-container {\r\n  display: inline-block;\r\n}\r\n</style>\r\n",".sku-container {\n  display: inline-block;\n}\n\n/*# sourceMappingURL=main.vue.map */"]}, media: undefined });
+      inject("data-v-2560090a_0", { source: ".sku-container[data-v-2560090a] {\n  display: inline-block;\n}\n\n/*# sourceMappingURL=main.vue.map */", map: {"version":3,"sources":["E:\\code\\font-code\\lerna-repo\\packages\\starlinke-components\\packages\\SlFieldBatchInput\\src\\main.vue","main.vue"],"names":[],"mappings":"AA+GA;EACA,qBAAA;AC9GA;;AAEA,mCAAmC","file":"main.vue","sourcesContent":["<template>\r\n  <div\r\n    class=\"sku-container\"\r\n    :style=\"{ width: width ? width + 'px' : '100%' }\"\r\n  >\r\n    <el-input\r\n      ref=\"input\"\r\n      v-model=\"skuCodesCopy\"\r\n      :placeholder=\"`请输入${label}`\"\r\n      clearable\r\n      @input=\"handleInput\"\r\n    >\r\n      <el-button\r\n        v-if=\"showBatchButton\"\r\n        slot=\"append\"\r\n        type=\"primary\"\r\n        @click=\"multipleSku\"\r\n      >\r\n        批量\r\n      </el-button>\r\n    </el-input>\r\n    <SkuBatchDialog\r\n      ref=\"skuBatchDialog\"\r\n      :maxLen=\"maxLen\"\r\n      :label=\"label\"\r\n      v-bind=\"$attrs\"\r\n      @submit=\"onSubmit\"\r\n    />\r\n  </div>\r\n</template>\r\n\r\n<script>\r\nimport SkuBatchDialog from './skuBatchDialog'\r\nimport { http } from 'starlinke-utils'\r\n\r\nexport default {\r\n  name: 'SlFieldBatchInput',\r\n  components: {\r\n    SkuBatchDialog\r\n  },\r\n  model: {\r\n    prop: 'skuCodes',\r\n    event: 'confirm'\r\n  },\r\n  props: {\r\n    skuCodes: {\r\n      type: String,\r\n      default: ''\r\n    },\r\n    maxLen: {\r\n      type: Number,\r\n      default: 200\r\n    },\r\n    label: {\r\n      type: String,\r\n      default: 'SKU'\r\n    },\r\n    width: {\r\n      type: Number,\r\n      default: 0\r\n    },\r\n    showBatchButton: {\r\n      type: Boolean,\r\n      default: true\r\n    }\r\n  },\r\n  data() {\r\n    return {\r\n      skuCodesCopy: '',\r\n      multipleSkuVisible: false\r\n    }\r\n  },\r\n  watch: {\r\n    skuCodes(val) {\r\n      this.skuCodesCopy = val\r\n    }\r\n  },\r\n  mounted() {\r\n    http.get('/srm-common-service/data/name-value/list?dataCode=SUPPLY_TYPE').then(res => {\r\n      console.log(res)\r\n    })\r\n  },\r\n  methods: {\r\n    handleInput(value) {\r\n      this.skuCodesCopy = this.formatLen(this.skuCodesCopy)\r\n      this.onEmit(this.skuCodesCopy)\r\n    },\r\n    multipleSku() {\r\n      if (this.disabled) return\r\n      this.$refs.skuBatchDialog.show(this.skuCodesCopy)\r\n    },\r\n    onSubmit(skucode) {\r\n      this.onEmit(skucode)\r\n    },\r\n    onEmit(skuCodes) {\r\n      this.$emit('confirm', skuCodes)\r\n    },\r\n    formatLen(skuCodes) {\r\n      let skuArr = skuCodes.split(',')\r\n      if (skuArr.length > this.maxLen) {\r\n        this.$message.warning(`超出允许输入最大数量${this.maxLen}个，已自动截取！`)\r\n        skuArr.length = this.maxLen\r\n        return skuArr.join(',')\r\n      }\r\n      return skuCodes\r\n    }\r\n  }\r\n}\r\n</script>\r\n\r\n<style lang=\"scss\" scoped>\r\n.sku-container {\r\n  display: inline-block;\r\n}\r\n</style>\r\n",".sku-container {\n  display: inline-block;\n}\n\n/*# sourceMappingURL=main.vue.map */"]}, media: undefined });
 
     };
     /* scoped */
-    var __vue_scope_id__$1 = "data-v-324c277e";
+    var __vue_scope_id__$1 = "data-v-2560090a";
     /* module identifier */
     var __vue_module_identifier__$1 = undefined;
     /* functional template */
