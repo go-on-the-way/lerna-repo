@@ -26,3 +26,24 @@ lerna add babel-core // 将babel-core 安装到所有模块
 ```
 lerna exec --scope=starlinke-utils npm uninstall axios // 将starlinke-utils包下的axios卸载
 ```
+
+### 检查包是否发生变更
+
+```
+lerna updated
+```
+
+### 运行各包的脚本
+
+```
+lerna run xxx
+// 例
+lerna run --scope starlinke-utils test //运行 starlinke-utils 模块下的 test
+
+```
+
+### 发布各包
+
+```
+lerna publish
+```
