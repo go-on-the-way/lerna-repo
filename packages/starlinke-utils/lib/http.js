@@ -3,7 +3,7 @@ import axios from 'axios'
 import qs from 'qs'
 
 const http = axios.create({
-  baseURL: '', //
+  baseURL: 'http://beta.srm.starlinke.cn/api/v1', //
   timeout: 5 * 60 * 1000 // 请求超时时间5分钟
 })
 

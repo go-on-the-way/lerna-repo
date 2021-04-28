@@ -31,6 +31,7 @@
 
 <script>
 import SkuBatchDialog from './skuBatchDialog'
+import { http } from 'starlinke-utils'
 
 export default {
   name: 'SlFieldBatchInput',
@@ -73,6 +74,11 @@ export default {
     skuCodes(val) {
       this.skuCodesCopy = val
     }
+  },
+  mounted() {
+    http.get('/srm-common-service/data/name-value/list?dataCode=SUPPLY_TYPE').then(res => {
+      console.log(res)
+    })
   },
   methods: {
     handleInput(value) {

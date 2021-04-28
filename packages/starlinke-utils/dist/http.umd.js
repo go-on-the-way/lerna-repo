@@ -14,7 +14,7 @@
   var qs__default = /*#__PURE__*/_interopDefaultLegacy(qs);
 
   var http = axios__default['default'].create({
-    baseURL: '',
+    baseURL: 'http://beta.srm.starlinke.cn/api/v1',
     //
     timeout: 5 * 60 * 1000 // 请求超时时间5分钟
 

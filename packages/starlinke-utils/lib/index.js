@@ -1,3 +1,4 @@
 
+import http from './http'
 export * from './download'
-export * from './http'
+exports.http = http
