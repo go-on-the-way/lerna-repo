@@ -45,5 +45,5 @@ lerna run --scope starlinke-utils test //运行 starlinke-utils 模块下的 tes
 ### 发布各包
 
 ```
-lerna publish
+lerna publish //当所有模块都需发布时才执行此命令,否则在各自的模块目录下执行 npm publish进行发布
 ```
