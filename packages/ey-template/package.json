@@ -1,0 +1,41 @@
+{
+  "name": "ey-template",
+  "version": "1.0.0",
+  "description": "生成模版代码",
+  "keywords": [
+    "template"
+  ],
+  "author": "“wangle” <“245693023@qq.com”>",
+  "homepage": "http://wlei.com.cn",
+  "license": "MIT",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "__tests__"
+  },
+  "files": [
+    "lib"
+  ],
+  "publishConfig": {
+    "registry": "https://registry.yarnpkg.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/go-on-the-way/lerna-repo.git"
+  },
+  "scripts": {
+    "generate": "node ./bin/ey.js generate",
+    "test": "echo \"Error: run tests from root\" && exit 1"
+  },
+  "bin": {
+    "ey-tool": "./bin/ey.js"
+  },
+  "bugs": {
+    "url": "https://github.com/go-on-the-way/lerna-repo/issues"
+  },
+  "dependencies": {
+    "cross-spawn": "^7.0.3",
+    "ejs": "^3.1.8",
+    "inquirer": "^8.2.4"
+  }
+}

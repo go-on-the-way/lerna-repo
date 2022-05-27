@@ -1,0 +1,26 @@
+import { WithNormalRender } from "@ey-render/hoc-form";
+import { useMemo,FC } from 'react';
+
+
+import components from "@/components/schema-form-render/schema-components-registed/components-biz";
+
+import logic from "@/logic";
+
+import { back, checkDataBeforeSubmit, formatFormData } from "./hooks";
+
+const Demo= () => {
+    const FormLayout:any = useMemo(() => {
+    return WithNormalRender({
+    filedConfig: {},
+    components: {
+    ...components
+    },
+    })
+    }, [])
+
+    //<%- param %>
+
+    return <FormLayout></FormLayout>;
+  };
+
+export default Demo;
